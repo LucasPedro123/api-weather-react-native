@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext, useState } from "react";
 import {
   Container,
   HeaderContainer,
@@ -12,10 +12,24 @@ import {
 
 import Background from "../../assets/images/background.png";
 import Cloud from "../../assets/images/cloud.png";
+import { TouchableOpacity, Text, Button, View } from "react-native";
+import LinearGradient from "react-native-linear-gradient";
+import { WeatherContext } from "../../../Context/WeatherContext";
 
-export default function Search() {
+export default function Search({ navigation }) {
+  const context = useContext(WeatherContext)
+
+  const [inputSearch, setInputSearch] = useState();
+
+  function handleClickDash() {
+    context.setWeatherSearch(inputSearch)
+    if(inputSearch != null){
+      navigation.navigate('dash')
+    }
+  }
+
   return (
-    <Container source={Background} resizeMode="cover">
+    <Container source={Background}  resizeMode="cover">
       <HeaderContainer>
         <HeaderImg source={Cloud} />
         <TitleText>TypeWeather</TitleText>
@@ -26,7 +40,9 @@ export default function Search() {
         </TitleText>
         <Subtitle>Escolha um local para ver a previsão do tempo</Subtitle>
       </TitleContainer>
-      <Input>Buscar Local</Input>
+      <Input placeholder="Buscar Local" onChangeText={(text)=>{setInputSearch(text)}}></Input>
+
+      <Button title="Ir" onPress={() => { handleClickDash() }} />
     </Container>
   );
 }
