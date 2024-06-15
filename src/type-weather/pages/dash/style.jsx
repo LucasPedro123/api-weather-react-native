@@ -4,6 +4,7 @@ export const Container = styled.View`
     flex: 1;
     background-color: #13131A; 
     align-items: center;
+    
 `
 
 export const Card = styled.Image`
@@ -54,7 +55,7 @@ export const CardWrapper = styled.View`
 export const CardTemperature = styled.View`
     margin-left: 20px;
     flex-direction: row;
-    gap: 10px;
+    gap: 30px;
     align-items: center;
 `
 
@@ -80,5 +81,55 @@ export const Description = styled.Text`
     font-weight: 400;
     font-size: 14px;
     color: rgb(255, 255, 255);
+
+`
+
+
+// Weather Details:
+export const WeatherDetailsContainer = styled.View`
+    margin-top: 24px;
+
+    padding: 4px 16px;
+    gap: 8px;
+
+    background: #16161F;
+    border-radius: 12px;
+
+`
+
+export const WeatherDetailsWrapper = styled.View`
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 327px;
+    height: 56px;
+
+    box-sizing: border-box;
+    border-bottom: 1px solid #1C1C27;
+
+
+
+
+`
+
+export const WeatherDetailsText = styled.View`
+    flex-direction: row;
+    gap: 12px;
+`
+export const WeatherDetailsNumber = styled.Text`
+
+    font-weight: 700;
+    font-size: 16px;
+    color: #FAFAFA;
+
+
+
+`
+export const WeatherDetailsName = styled.Text`
+    font-weight: 700;
+    font-size: 14px;
+    color: #BFBFD4;
+
+    
 
 `
